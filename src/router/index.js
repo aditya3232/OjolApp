@@ -2,6 +2,7 @@
 // navigation stack diletakkan di index.js
 // ini adalah komponen router, dimana dia adalah stack navigator yg menyimpan kumpulan pages
 // nanti komponen router akan dipanggil di App.js
+// option headerShawn: false, agar header tidak muncul di halaman welcomeauth
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {Splash, Login, Register, WelcomeAuth} from '../pages';
@@ -14,7 +15,13 @@ const Router = () => {
       <Stack.Screen name="Splash" component={Splash} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Register" component={Register} />
-      <Stack.Screen name="WelcomeAuth" component={WelcomeAuth} />
+      <Stack.Screen
+        name="WelcomeAuth"
+        component={WelcomeAuth}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack.Navigator>
   );
 };
