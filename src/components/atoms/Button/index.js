@@ -7,9 +7,15 @@ import {Text} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {colors} from '../../../utils';
 
-const Button = ({title}) => {
+// agar Button bisa diklik maka diberikan action onPress
+// kemudian action onPress diberikan fungsi
+// fungsinya dituliskan didalam props onPress
+// props onPress berisi data berupa fungsi ini, onPress={() => handleGoTo(screen)
+// fungsi yg dibuat adalah fungsi HandleGoTo yang berada di WelcomeAuth
+// setelah diberi onPress, di komponen ActionButton.js dapat diberikan onPress
+const Button = ({title, onPress}) => {
   return (
-    <TouchableOpacity style={styles.wrapper.component}>
+    <TouchableOpacity style={styles.wrapper.component} onPress={onPress}>
       <Text style={styles.text.title}>{title}</Text>
     </TouchableOpacity>
   );

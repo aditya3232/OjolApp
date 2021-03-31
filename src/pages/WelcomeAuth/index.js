@@ -13,18 +13,30 @@ import {welcomeAuth} from '../../assets';
 // dipemanggilan ActionButton diberikan props {desc, title}
 // style akan dibuatkan objek diluar (tapi tetap didalam file index.js WelcomeAuth) agar lebih rapi lagi
 // semua style view biasanya didalam wrapper
-const WelcomeAuth = () => {
+const WelcomeAuth = ({navigation}) => {
+  // fungsi handleGoTo akan menerima navigation
+  // karena di ActionButton sudah ada props onPress, maka data untuk masuk kemananya bisa diberikan seperti ini,
+  // onPress={() => handleGoTo('Login')}
+  // data string handleGoTo akan diterima sebagai screen (diberi variabel dgn nama screen)
+  const handleGoTo = screen => {
+    navigation.navigate(screen);
+  };
+
   return (
     <View style={styles.wrapper.page}>
       <Image source={welcomeAuth} style={styles.wrapper.ilustration} />
       <Text style={styles.text.welcome}>Selamat Datang di O-JOL</Text>
+      {/* memanggi komponen ActionButton */}
       <ActionButton
         desc="Silahkan pilih masuk, jika anda sudah memiliki akun"
         title="Masuk"
+        onPress={() => handleGoTo('Login')}
       />
+      {/* memanggil komponen ActionButton */}
       <ActionButton
         desc="Atau, silahkan daftar jika anda belum memiliki akun"
         title="Daftar"
+        onPress={() => handleGoTo('Register')}
       />
     </View>
   );

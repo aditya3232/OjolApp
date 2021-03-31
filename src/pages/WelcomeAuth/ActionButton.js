@@ -15,14 +15,19 @@ import {colors} from '../../utils';
 // setelah didefinisikan, kemudian props dipanggil pada bagian komponen ActionButton
 // style akan dibuatkan objek diluar (tapi tetap didalam file ActiobButton.js) agar lebih rapi lagi
 // const ActionButton = ({desc, title}) => { (props diisi di index.js WelcomeAuth)
-const ActionButton = ({desc, title}) => {
+const ActionButton = ({desc, title, onPress}) => {
   return (
     <View style={styles.wrapper.component}>
       <Text style={styles.text.desc}>
-        {/* memanggil props */}
+        {/* memanggil props (yaitu "model" yg menerima data) */}
         {desc}
       </Text>
-      <Button title={title} />
+      {/* pemanggil komponen <Button> disini diberikan props onPress, */}
+      {/* function onPress ditulis di di index.js (WelcomeAuth), */}
+      {/* karena hanya dihalaman (WelcomeAuth) yg bisa menjalankan navigasi, karena merupakan halaman utama */}
+      {/* props onPress disini akan digunakan di masing" ActionButton pada halaman WelcomeAuth */}
+      {/* sehingga di halaman WelcomeAuth dapat diberi data untuk berpindah halaman kemana */}
+      <Button title={title} onPress={onPress} />
     </View>
   );
 };
