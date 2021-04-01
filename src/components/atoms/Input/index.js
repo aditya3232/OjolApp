@@ -21,6 +21,8 @@ const Input = ({placeholder}) => {
 
 // ini adalah penulisan objek styles yg baru, secara fungsi sama saja seperti yg sebelumnya (objek javascript biasa)
 // padding vertical, horizontal agar placeholder agak nengah (didalam TexInput)
+// styling disini hanya untuk styling textinput saja
+// untuk styling textinput pada halaman Register, lebih baik di styling disana (Halaman Register)
 const styles = StyleSheet.create({
   input: {
     borderWidth: 1,
