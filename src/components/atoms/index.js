@@ -1,5 +1,7 @@
-// kenapa import Button, karena Button ini export default sehingga kita import dulu baru kita export menjadi sebuah,
-// objek supaya pemanggilannya nanti lebih mudah
+// import semua komponen atoms
+// kemudian diekspor
+// index ini akan digunakan di indexnya src/components (yg akan mengekspor semua dari sini)
 import Button from './Button';
+import Input from './Input';
 
-export {Button};
+export {Button, Input};
