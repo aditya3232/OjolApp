@@ -9,12 +9,16 @@ import {colors} from '../../../utils';
 // Fungsi Input (const input) ditambah props placeholder, agar placeholdernya dinamis
 // kemudian di TextInputnya diberi fungsi placeholder, dimana data dari placeholder disimpan
 // sedangkan data placeholder diisi di halaman register
-const Input = ({placeholder}) => {
+// ...rest artinya, kita akan mengumpulkan semua props yg belum didefinisikan sama sekali
+// sehingga props di <Input /> pada halaman register yaitu Value & onChangeText dapat terdefinisi
+// ...rest adalah metode membuat props secara dinamis, sehingga tidak perlu mendefinisikan satu satu
+const Input = ({placeholder, ...rest}) => {
   return (
     <TextInput
       style={styles.input}
       placeholder={placeholder}
       placeholderTextColor={colors.default}
+      {...rest}
     />
   );
 };

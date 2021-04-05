@@ -11,7 +11,9 @@ const Stack = createStackNavigator();
 
 const Router = () => {
   return (
-    <Stack.Navigator>
+    // tambahi di <Stack.Navigator>, props initialRouteName="Register", agar yg kebuka halaman register langsung ketika,
+    // di reload, untuk ngecek perubahan biar g reload dari awal
+    <Stack.Navigator initialRouteName="Register">
       <Stack.Screen name="Splash" component={Splash} />
       <Stack.Screen
         name="Login"
