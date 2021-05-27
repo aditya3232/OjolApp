@@ -1,2 +1,2 @@
 # OjolApp
- Latihan React
+ Aplikasi mobile dengan React Native
